@@ -1,0 +1,21 @@
+version: '3'
+services:
+  hyperf-gateway:
+    container_name: hyperf-gateway
+    image: hyperf-skeleton
+    build:
+      context: .
+    volumes:
+      - ./:/opt/www
+    ports:
+      - 8080:9501
+    environment:
+      - APP_ENV=dev
+      - SCAN_CACHEABLE=false
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+networks:
+  default:
+    name: hyperf-gateway
