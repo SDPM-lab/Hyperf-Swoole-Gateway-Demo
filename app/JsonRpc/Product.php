@@ -8,7 +8,7 @@ use Hyperf\RpcClient\AbstractServiceClient;
 class Product extends AbstractServiceClient implements ProductInterface
 {
     protected string $serviceName = "ProducthService";
-    protected string $protocol = "jsonrpc-http";
+    protected string $protocol = "jsonrpc";
 
     public function products()
     {
